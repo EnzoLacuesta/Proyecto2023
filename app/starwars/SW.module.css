@@ -1,0 +1,24 @@
+.SW{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.ContCard{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.Card{
+    height: 30rem;
+    width: 20rem;
+    border: solid black 2px;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    display: grid;
+    align-items: center;
+    justify-content: center;    
+}    
+.inpSW{
+    width: 20rem;
+    height: 2rem;
+    margin: 1rem 2rem 1rem 25rem;
+}
