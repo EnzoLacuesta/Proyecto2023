@@ -9,12 +9,20 @@ const rutas = [
     {
         ruta: '/post',
         label:'Post'
+      },
+      {
+        ruta: '/starwars',
+        label:'Star Wars'
+      },
+      {
+        ruta: '/tareas',
+        label:'Lista de tareas'
       }
   ];
 
 const Nav = () => {
   return (
-    <nav >
+    <nav className={style.nav}>
         <ul className={style.ul}>
             {rutas.map(({ruta, label})=>(
             <li >

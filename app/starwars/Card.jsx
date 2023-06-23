@@ -9,6 +9,20 @@ const Card = () => {
     const [PeopleSW, setPeopleSw] = useState([])
     const [search, setSearch] = useState ('');
     
+    //Funcion de busqueda, busca capturar los valores que el usuario ingresa en el input 
+    //Se desencadena la funcion cada vez que hay un cambio en el input OnChange
+    const searcher = (e) => {
+        setSearch(e.target.value)
+        console.log(e.target.value)
+    }
+    //Metodo de filtrado
+    let resultado = []
+    if(!search){
+        resultado = PeopleSW
+    }else{
+        resultado = PeopleSW.filter( (dato) => 
+        dato.name.toLowerCase().includes(search.toLowerCase()))
+    }
 
     useEffect(()=>{
         fetch(API_SW)
@@ -25,10 +39,11 @@ const Card = () => {
             placeholder='Busca tu personaje favorito' 
             className={style.inpSW}
             value = {search} 
-            onChange = {handleChange}/>
+            onChange={searcher}
+            />
 
         <div className={style.ContCard}>        
-            {PeopleSW.map(data =>(
+            {resultado.map(data =>(
                 <div key={data.name} className={style.Card}>
                     <p>{data.name}</p>
                     <p>{data.gender}</p>               
