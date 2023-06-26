@@ -17,6 +17,10 @@ const rutas = [
       {
         ruta: '/tareas',
         label:'Lista de tareas'
+      },
+      {
+        ruta: '/searchfilm',
+        label:'Search film'
       }
   ];
 
