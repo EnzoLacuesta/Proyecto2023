@@ -1,34 +1,29 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-
+import React, { useState } from 'react'
+import style from './tareas.module.css'
 
 const Btn = () => {
+
     const [tarea, setTarea] = useState ("")
     const [listaTarea, setListaTarea] = useState ([])
 
-
     const CrearTarea = () =>{
-    (tarea === "") ? alert("Escribe una tarea") : setListaTarea(tarea)
-}
-
+        (tarea === "") ? alert("Escribe una tarea") : setListaTarea(listaTarea.concat(tarea)); setTarea("")
+    }
 
   return (
-    <div>
+    <div className={style.tareas}>
         <input 
             type="text"
             value={tarea}
-            onChange={(e)=>setTarea(e.target.value)}/>
-            
+            onChange={(e)=>setTarea(e.target.value)}/>            
         <button onClick={CrearTarea}>Crear tarea</button>
-
         {
-            listaTarea.map(({index, task})=>{
+            listaTarea.map((value)=>{
                 return (
-                    <div key={index}>{task}</div>
-                )
-            })
+                    <div key={value}>{value}</div>
+                )})
         }
-
     </div>
   )
 }

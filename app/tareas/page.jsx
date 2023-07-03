@@ -1,12 +1,16 @@
 import React from 'react'
 import TareasJson from './tareasJson'
 import Btn from './Btn'
+import style from './tareas.module.css'
 
 const page = () => {
   return (
     <div>
-        <TareasJson></TareasJson>
-        <Btn></Btn>
+        <div>
+            <Btn></Btn>
+            <TareasJson></TareasJson>                       
+        </div>
+
     </div>
   )
 }
